@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load humanize %}
+{% block content %}
+{% for day in days %}
+<div>
+    <h1>{{day.date | naturalday | capfirst}}</h1>
+    <!-- link to weekly view page
+    link to edit page -->
+    <h2>Schedule</h2>
+    <ul>
+        {% for schedule in day.schedules.all %}
+        <li>{{schedule.time}}: {{schedule.content}}</li>
+        {% endfor %}
+    </ul>
+   
+    <!-- Delete button -->
+    <span></span>
+    <!-- Delete button -->
+    <h2>Memo</h2>
+    <span>{{day.memo}}</span>
+    <!-- Delete button -->
+</div>
+{% endfor %}
+{% endblock %}
