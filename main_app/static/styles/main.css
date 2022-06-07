@@ -1,0 +1,66 @@
+.navbar {
+    background-image: url("/static/styles/sky.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.nav-text {
+    font-family: 'Gamja Flower', cursive;
+    font-size: 2rem;
+}
+
+.pencil {
+    width: 1.5rem;
+    padding-bottom: 0.5rem;
+    text-align: right;
+}
+
+.pencil-span {
+    text-align: right;
+}
+
+.day {
+    font-size: 2rem;
+}
+
+.date {
+    font-size: 1rem;
+}
+
+.memo {
+    padding-left: 1.5rem;
+    /* margin-bottom: 0.5rem; */
+}
+
+/* .edit-memo, .edit-schedule {
+    font-family: 'Gamja Flower', cursive;
+    font-size: 50px;
+} */
+
+.footer {
+    background-image: url("/static/styles/sky.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* position: fixed; */
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    align-items: center;
+    line-height: 2.5rem;
+    font-size: 0.75rem;
+}
+
+
+
+.card-header{
+    font-family: 'Gamja Flower', cursive;
+    font-size: 30px;
+}
+.sun {
+    width: 5rem;
+}
+
+.card {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}

@@ -2,23 +2,22 @@
 {% load humanize %}
 {% block content %}
 {% for day in days %}
-<div>
-    <h1>{{day.date | naturalday | capfirst}}</h1>
-    <!-- link to weekly view page
-    link to edit page -->
-    <h2>Schedule</h2>
-    <ul>
-        {% for schedule in day.schedules.all %}
-        <li>{{schedule.time}}: {{schedule.content}}</li>
-        {% endfor %}
-    </ul>
-   
-    <!-- Delete button -->
-    <span></span>
-    <!-- Delete button -->
-    <h2>Memo</h2>
-    <span>{{day.memo}}</span>
-    <!-- Delete button -->
+<div class="card">
+    <div class="card-header">
+        <span class="day">{{day.date|naturalday|capfirst}}</span> <span class="date">{{day.date}}</span>
+    </div>
+    <div class="card-body">
+       Schedule 
+        <!-- <img class="pencil" src="../static/image/pencil.png" alt="blue pencil"> -->
+        <ul>
+            {% for schedule in day.schedules.all %}
+            <li>{{schedule.time}} | <a href="/schedule/{{schedule.id}}/update">{{schedule.content}}</a></li>
+            {% endfor %}
+        </ul>
+        Memo<br>
+        <!-- <img class="pencil" src="../static/image/pencil.png" alt="blue pencil"><br> -->
+        <span class="memo"><a href="/memo/{{day.id}}/update">{{day.memo}}</a></span>              
+    </div>
 </div>
 {% endfor %}
 {% endblock %}
