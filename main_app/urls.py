@@ -28,5 +28,7 @@ urlpatterns = [
    
     
     #This is to display relevant week's
-    path('weekly/', views.WeeklySchedule.as_view(), name="weekly_schedule")
+    path('weekly/', views.WeeklySchedule.as_view(), name="weekly_schedule"),
+    
+    path('accounts/signup/', views.Signup.as_view(), name="signup")
 ]

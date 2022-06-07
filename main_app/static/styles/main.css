@@ -1,7 +1,17 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    flex: 1;
+}
+
 .navbar {
-    background-image: url("/static/styles/sky.png");
+    background: url("../image/sky.png");
     background-size: cover;
-    background-repeat: no-repeat;
+    /* background-repeat: no-repeat; */
 }
 
 .nav-text {
@@ -9,15 +19,17 @@
     font-size: 2rem;
 }
 
+.instruction {
+    color: powderblue;
+    font-size: 0.75rem;
+}
+
 .pencil {
     width: 1.5rem;
     padding-bottom: 0.5rem;
-    text-align: right;
+    
 }
 
-.pencil-span {
-    text-align: right;
-}
 
 .day {
     font-size: 2rem;
@@ -37,17 +49,20 @@
     font-size: 50px;
 } */
 
-.footer {
-    background-image: url("/static/styles/sky.png");
+.links {
+    color: black;
+}
+
+footer {
+    background: url("../image/sky.png");
     background-size: cover;
     background-repeat: no-repeat;
-    /* position: fixed; */
-    bottom: 0;
     width: 100%;
     text-align: center;
     align-items: center;
     line-height: 2.5rem;
     font-size: 0.75rem;
+    margin-top: 2rem;
 }
 
 
@@ -63,4 +78,8 @@
 .card {
     margin-top: 1rem;
     margin-bottom: 1rem;
+    border: solid 0.01px #d3d3d3;
+    border-radius: 1%;
+    box-shadow: 5px 5px 5px #e5e5e5;
+    background-color: white;
 }

@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load humanize %}
+{% block title %}Daily View{% endblock %}
 {% block content %}
 {% for day in days %}
 <div class="card">
@@ -7,16 +8,18 @@
         <span class="day">{{day.date|naturalday|capfirst}}</span> <span class="date">{{day.date}}</span>
     </div>
     <div class="card-body">
+        <span class="instruction">* Click contents to edit.</span><br>
        Schedule 
         <!-- <img class="pencil" src="../static/image/pencil.png" alt="blue pencil"> -->
+        
         <ul>
             {% for schedule in day.schedules.all %}
-            <li>{{schedule.time}} | <a href="/schedule/{{schedule.id}}/update">{{schedule.content}}</a></li>
+            <li><a class ="links" href="/schedule/{{schedule.id}}/update">{{schedule.time}}</a> | <a class ="links" href="/schedule/{{schedule.id}}/update">{{schedule.content}}</a></li>
             {% endfor %}
         </ul>
         Memo<br>
         <!-- <img class="pencil" src="../static/image/pencil.png" alt="blue pencil"><br> -->
-        <span class="memo"><a href="/memo/{{day.id}}/update">{{day.memo}}</a></span>              
+        <span class="memo"><a class ="links" href="/memo/{{day.id}}/update">{{day.memo}}</a></span>              
     </div>
 </div>
 {% endfor %}

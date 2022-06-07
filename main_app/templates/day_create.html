@@ -1,13 +1,9 @@
 {% extends 'base.html' %}
 {% block content %}
-<form method="post" enctype="multipart/form-data">
+<h1>Add New Day</h1>
+<form method="post">
     {% csrf_token %}
-    <label><h3>Schedule</h3></label>
-    <!-- accessing form 1 from view -->
-    {{ forms.schedule_form.as_p }}
-    <label><h3>Memo</h3></label>
-    <!-- accessing form 2 from view -->
-    {{ forms.memo_form.as_p }}
-    <input type="submit" value="submit"/>
- </form>
+    {{form.as_p}}
+    <input type="submit" value="Submit" />
+</form>
 {% endblock %}
