@@ -1,13 +1,13 @@
-from django.forms import forms
+from django import forms
 from .models import Day, Schedule
 
-class ScheduleForm(forms.ModelForm):
+class ScheduleCreateForm(forms.ModelForm):
     # create_schedule = forms.BooleanField(widget=forms.HiddenInput, initial=True)
     class Meta:
         model = Schedule
-        fields = ['date', 'time', 'schedule']
+        fields = ['time', 'content']
         
-class MemoForm(forms.ModelForm):
+class DayCreateForm(forms.ModelForm):
 #    create_memo = forms.BooleanField(widget=forms.HiddenInput, initial=True)
    
    class Meta:

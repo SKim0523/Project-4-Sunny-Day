@@ -1,5 +1,4 @@
-from django.shortcuts import render
-from django.shortcuts import redirect
+from django.shortcuts import render, redirect
 from django.views import View
 from django.views.generic.base import TemplateView
 from .models import Day, Schedule
@@ -10,23 +9,19 @@ from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
+# from .forms import ScheduleCreateForm, DayCreateForm
 
-
-class DayCreate(CreateView):
-    model = Day
-    fields = ['date', 'memo']
-    template_name = "day_create.html"
-    def get_success_url(self):
-        return redirect('day_create', kwargs={'pk': self.object.pk})
-
-class ScheduleCreate(CreateView):
-    model = Schedule
-    fields = ['time', 'content']
-    template_name = "schedule_create.html"
-    def get_success_url(self):
-        return redirect('schedule_create', kwargs={'pk': self.object.pk})
-
-
+@method_decorator(login_required, name='dispatch')
+class DayCreate(View):
+    def post(self, request):
+        date = request.POST.get("date")
+        time = request.POST.get("time")
+        content = request.POST.get("content")
+        memo = request.POST.get("memo")
+        dayContent = Day.objects.create(date=date, memo=memo)
+        Schedule.objects.create(time=time, content=content, day_id=dayContent.id)
+        return redirect('daily_schedule')
+        
 @method_decorator(login_required, name='dispatch')
 class ScheduleUpdate(UpdateView):
     model = Schedule
@@ -40,15 +35,17 @@ class MemoUpdate(UpdateView):
     fields = ['memo']
     template_name = "memo_update.html"
     success_url = "/daily/"   
-    
-class DayDelete(DeleteView):
-    model = Day
-    template_name = "day_delete.html"
-    success_url = "/weekly/"
 
+@method_decorator(login_required, name='dispatch')
 class ScheduleDelete(DeleteView):
     model = Schedule
     template_name = "schedule_delete.html"
+    success_url = "/daily/"
+
+@method_decorator(login_required, name='dispatch')
+class MemoDelete(DeleteView):
+    model = Day
+    template_name = "memo_delete.html"
     success_url = "/daily/"
 
 @method_decorator(login_required, name='dispatch')
@@ -59,13 +56,7 @@ class DailySchedule(TemplateView):
         today = datetime.now().date()
         tomorrow = today + timedelta(1)
         context = super().get_context_data(**kwargs)
-        context["days"] = Day.objects.filter(date__in=[today, tomorrow])
-        # def get_success_url(self):
-        #     return reverse('schedule_update', kwargs={'pk': self.object.pk})
-        
-        # context["schedule"] = Schedule.objects.filter(day__in=[today, tomorrow])
-        # context["memo"] = Day.objects.filter(memo__in=[today, tomorrow])
-        
+        context["days"] = Day.objects.filter(date__in=[today, tomorrow]) 
         return context
     
 class WeeklySchedule(TemplateView):
@@ -76,12 +67,10 @@ class WeeklySchedule(TemplateView):
         return context
     
 class Signup(View):
-    # show a form to fill out
     def get(self, request):
         form = UserCreationForm()
         context = {"form": form}
         return render(request, "registration/signup.html", context)
-    # on form ssubmit validate the form and login the user.
     def post(self, request):
         form = UserCreationForm(request.POST)
         if form.is_valid():
@@ -91,3 +80,5 @@ class Signup(View):
         else:
             context = {"form": form}
             return render(request, "registration/signup.html", context)
+        
+

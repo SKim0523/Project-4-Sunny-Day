@@ -24,11 +24,17 @@ body {
     font-size: 0.75rem;
 }
 
-.pencil {
+.fa-delete-left {
+    color: powderblue;
+    font-size: 0.85rem;
+    margin-left: 0.3rem;
+}
+
+/* .pencil {
     width: 1.5rem;
     padding-bottom: 0.5rem;
     
-}
+} */
 
 
 .day {
