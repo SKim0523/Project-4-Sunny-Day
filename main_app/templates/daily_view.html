@@ -16,6 +16,7 @@
     </div>
     <div class="card-body">
         <span class="instruction">* Click contents to edit.</span><br>
+        
        <span class="category">Schedule</span>
         <!-- <img class="pencil" src="../static/image/pencil.png" alt="blue pencil"> -->
         
@@ -34,52 +35,4 @@
     </div>
 </div>
 {% endfor %}
-
-<!-- <div class="card">
-    <div class="card-header">
-        Add New Schedule
-    </div>
-    <div class="card-body">
-<form method="post" action="{% url 'day_create' %}">
-    {% csrf_token %}
-    <div>
-        <div>
-            Date:
-            <input 
-            type="text"
-            name="date"
-            placeholder="YYYY-MM-DD"
-            />
-        </div><br>
-        <div>
-            Schedule Time:
-            <input 
-            type="text"
-            name="time"
-            placeholder="e.g. 13:00 for 1:00 pm"
-            />
-        </div><br>
-        <div>
-            Schedule:
-            <input 
-            type="text"
-            name="content"
-            placeholder="Content"
-            />
-        </div><br>
-        <div>
-            Memo:
-            <input 
-            type="text"
-            name="memo"
-            placeholder="Content"
-            />
-        </div><br>
-        <div>
-            <input class="button is-primary" type="submit" value="Create Day" />
-        </div>
-    </div>  
-</form>
-</div>
-</div> -->
 {% endblock %}

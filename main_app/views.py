@@ -68,6 +68,18 @@ class DailySchedule(TemplateView):
         context["days"] = Day.objects.filter(date__in=[today, tomorrow]) 
         return context
     
+# class DailySchedule(TemplateView):
+#     template_name = "daily_view.html"
+#     def get_context_data(self, **kwargs):
+#         # https://stackoverflow.com/questions/11245483/django-filter-events-occurring-today
+#         context = super().get_context_data(**kwargs)
+#         today = datetime.now().date()
+#         tomorrow = today + timedelta(1)
+#         context["days"] = Day.objects.filter(date__in=[today, tomorrow])
+#         context["today"] = Day.objects.filter(today)
+#         context["tomorrow"] = tomorrow
+#         return context
+    
 class WeeklySchedule(TemplateView):
     template_name = "weekly_view.html"
     def get_context_data(self, **kwargs):

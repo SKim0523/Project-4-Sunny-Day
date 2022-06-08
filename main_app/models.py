@@ -12,6 +12,9 @@ class Day(models.Model):
     
     def __str__(self):
         return str(self.date)
+    
+    class Meta:
+        ordering =['date']
 
 class Schedule(models.Model):
 
@@ -23,4 +26,8 @@ class Schedule(models.Model):
     
     def __str__(self):
         return self.content
+    
+    class Meta:
+        ordering =['time']
+    
         
