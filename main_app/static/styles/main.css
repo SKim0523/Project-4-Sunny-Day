@@ -2,10 +2,18 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    background-color: #E8F6F9;
+    /* background: url("../image/background.png"); */
+    /* background-image: linear-gradient(#FCD729, #F3F8F9); */
 }
 
 .container {
     flex: 1;
+}
+
+.category {
+    font-size: 1.1rem;
+    font-weight: bold;
 }
 
 .navbar {
@@ -21,7 +29,7 @@ body {
 
 .instruction {
     color: powderblue;
-    font-size: 0.75rem;
+    font-size: 1rem;
 }
 
 .fa-delete-left {
@@ -50,10 +58,34 @@ body {
     /* margin-bottom: 0.5rem; */
 }
 
+.add-day-btn, .day-view-btn, .create-day-btn {
+    background-color: #FCD729;
+    border-radius: 0.3rem;
+}
+
+.btn-container, .day-view-btn-container {
+    text-align: right;
+}
+
+.btn-container {
+    margin-top: 20px;
+}
+
 /* .edit-memo, .edit-schedule {
     font-family: 'Gamja Flower', cursive;
     font-size: 50px;
 } */
+
+.children, .children2 {
+    width: 100%;
+    border-radius: 1%;
+    box-shadow: 5px 5px 5px #e5e5e5;
+    margin-top: 20px;
+}
+.children-container{
+    display: flex;
+    justify-content: center;
+}
 
 .links {
     color: black;
@@ -71,11 +103,14 @@ footer {
     margin-top: 2rem;
 }
 
-
-
 .card-header{
     font-family: 'Gamja Flower', cursive;
     font-size: 30px;
+    background: url("../image/sky.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* filter: saturate(75%); */
+    /* background-color: #FCD729; */
 }
 .sun {
     width: 5rem;
@@ -88,4 +123,15 @@ footer {
     border-radius: 1%;
     box-shadow: 5px 5px 5px #e5e5e5;
     background-color: white;
+}
+
+/* .add-page-background {
+    background: url("../image/background.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+} */
+
+.sun-logoff {
+    width:33%;
+    
 }

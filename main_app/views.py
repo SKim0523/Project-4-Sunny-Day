@@ -1,4 +1,7 @@
 from django.shortcuts import render, redirect
+
+from django.http import HttpResponseRedirect
+
 from django.views import View
 from django.views.generic.base import TemplateView
 from .models import Day, Schedule
@@ -11,9 +14,14 @@ from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 # from .forms import ScheduleCreateForm, DayCreateForm
 
+# Below saves data to the database
 @method_decorator(login_required, name='dispatch')
 class DayCreate(View):
+    def get(self, request):
+        return render(request, "day_create.html")
+    
     def post(self, request):
+        # return render(request, "daily_view.html")
         date = request.POST.get("date")
         time = request.POST.get("time")
         content = request.POST.get("content")
@@ -21,7 +29,8 @@ class DayCreate(View):
         dayContent = Day.objects.create(date=date, memo=memo)
         Schedule.objects.create(time=time, content=content, day_id=dayContent.id)
         return redirect('daily_schedule')
-        
+
+
 @method_decorator(login_required, name='dispatch')
 class ScheduleUpdate(UpdateView):
     model = Schedule
@@ -81,4 +90,6 @@ class Signup(View):
             context = {"form": form}
             return render(request, "registration/signup.html", context)
         
-
+class LogOut(TemplateView):
+    template_name = "log_off.html"
+    success_url = "/"   
