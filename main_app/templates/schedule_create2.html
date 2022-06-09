@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="children-container">
+    <img class="children2" src="../static/image/children2.png" alt="smiling children putting arms around one another's shoulders">
+</div>
+<div class="add-page-background">
+<div class="card">
+    <div class="card-header">
+        Add New Schedule
+    </div>
+    <div class="card-body">
+<form method="post" action="{% url 'schedule_create2' %}">
+    {% csrf_token %}
+    <div>
+        <div>
+            Schedule Time:
+            <input 
+            type="text"
+            name="time"
+            placeholder="e.g. 13:00 for 1:00 pm"
+            />
+        </div><br>
+        <div>
+            Schedule:
+            <input 
+            type="text"
+            name="content"
+            placeholder="Content"
+            />
+        </div><br>
+        <div>
+            DayID:
+            <input 
+            type="text"
+            name="dayId"
+            value="{{day_id}}"
+            />
+        </div><br>
+        <div>
+            <input class="create-schedule2-btn" type="submit" value="Add New Schedule" />
+        </div>
+    </div>  
+</form>
+</div>
+</div>
+    <div class="day-view-btn-container">
+    <a href="{% url 'daily_schedule' %}"><button class="day-view-btn">Daily View</button></a>
+    <a href="{% url 'weekly_schedule' %}"><button class="weekly-btn">Weekly View</button></a>
+    </div>
+</div>
+
+{% endblock %}

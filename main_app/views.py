@@ -1,7 +1,6 @@
+
 from django.shortcuts import render, redirect
-
 from django.http import HttpResponseRedirect
-
 from django.views import View
 from django.views.generic.base import TemplateView
 from .models import Day, Schedule
@@ -31,10 +30,31 @@ class DayCreate(View):
         return redirect('daily_schedule')
 
 
+
+class ScheduleCreate(View):
+    def get(self, request, day_id, *args, **kwargs):
+        print(request.session.items())
+        dayId = request.GET.get("day_id")
+        print(dayId)
+        return render(request, "schedule_create2.html")
+    
+    def post(self, request):
+        time = request.POST.get("time")
+        content = request.POST.get("content")
+        print(request.day_id)
+       
+        # Schedule.objects.create(time=time, content=content, day_id=dayId)
+        
+        return redirect('daily_schedule')
+    
+
+
+
+
 @method_decorator(login_required, name='dispatch')
 class ScheduleUpdate(UpdateView):
     model = Schedule
-    fields = ['time', 'content']
+    fields = ['time', 'content', 'day']
     template_name = "schedule_update.html"
     success_url = "/daily/"
     

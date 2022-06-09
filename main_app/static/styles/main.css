@@ -7,6 +7,10 @@ body {
     /* background-image: linear-gradient(#E8F6F9, #228db2); */
 }
 
+.login-page-body {
+    background-color: white !important;
+}
+
 /* .upper-container {
 
 } */
@@ -62,6 +66,12 @@ body {
     font-size: 1rem;
 }
 
+.fa-calendar-plus, .fa-heart-circle-plus {
+    color: #EF9F9F;
+    font-size: 0.85rem;
+    margin-right: 0.3rem;
+}
+
 .fa-delete-left {
     color: #89d1da;
     font-size: 0.85rem;
@@ -96,7 +106,18 @@ body {
 .add-day-btn, .day-view-btn, .create-day-btn, .weekly-btn {
     background-color: #FCD729;
     border-radius: 0.3rem;
-    /* font-family: 'Gamja Flower', cursive; */
+}
+
+.login-btn {
+    display: flex;
+    justify-content: right;
+    background-color: #FCD729;
+    border-radius: 0.3rem;
+}
+
+.login-btn-container {
+    display: flex;
+    justify-content: right;
 }
 
 .btn-container, .day-view-btn-container {
@@ -107,6 +128,9 @@ body {
     margin-top: 20px;
 }
 
+.login-form {
+    margin-top: 1rem;
+}
 /* .edit-memo, .edit-schedule {
     font-family: 'Gamja Flower', cursive;
     font-size: 50px;
@@ -119,9 +143,29 @@ body {
     box-shadow: 5px 5px 5px #e5e5e5;
     margin-top: 20px;
 }
+
+.children3 {
+    width: 80%;
+    border-radius: 1%;
+    box-shadow: 5px 5px 5px #e5e5e5;
+    margin-top: 20px;
+}
+
 .children-container{
     display: flex;
     justify-content: center;
+}
+
+.login-container{
+    display: flex;
+    justify-content: center;
+}
+
+.log-in {
+    font-family: 'Gamja Flower', cursive;
+    margin-top: 1rem;
+    margin-right: 2rem;
+    font-size: 1.5rem;
 }
 
 /******* Weekly View ******/
@@ -158,11 +202,6 @@ footer {
     margin-top: 2rem;
 }
 
-
-
-
-
-
 /* .add-page-background {
     background: url("../image/background.png");
     background-size: cover;
@@ -170,14 +209,19 @@ footer {
 } */
 
 .log-off {
-   background-color: white !important; 
    display: flex;
    justify-content: center;
 }
 
-.children-logoff {
-    width:70%;
-    display: block;
+.children_plus_illustration {
+    width:80%;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    border: solid 0.01px #d3d3d3;
+    border-radius: 1%;
+    box-shadow: 5px 5px 5px #e5e5e5;
+    background-color: white;
+
 }
 
 .bye-message{

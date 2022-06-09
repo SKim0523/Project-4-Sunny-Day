@@ -7,6 +7,8 @@ urlpatterns = [
     path('daily/', views.DailySchedule.as_view(), name="daily_schedule"), 
     #This is a form to creaete a new day
     path('day/new', views.DayCreate.as_view(), name="day_create"),
+    path('schedule/new/<int:day_id>', views.ScheduleCreate.as_view(), name="schedule_create2"),
+    path('schedule/new/', views.ScheduleCreate.as_view(), name="schedule_create2"),
     
     # These are to update a schedule/memo
     path('schedule/<int:pk>/update',
