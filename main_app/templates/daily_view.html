@@ -2,12 +2,14 @@
 {% load humanize %}
 {% block title %}Daily View{% endblock %}
 {% block content %}
+<div class="upper-container">
 <div class="children-container">
     <img class="children" src="../static/image/children.png" alt="smiling children">
 </div>
 <div class="btn-container">
-    <a href="{% url 'day_create' %}"><button class="add-day-btn">Weekly View</button></a>
+    <a href="{% url 'weekly_schedule' %}"><button class="weekly-btn">Weekly View</button></a>
     <a href="{% url 'day_create' %}"><button class="add-day-btn">Add New Day</button></a>
+</div>
 </div>
 {% for day in days %}
 <div class="card">

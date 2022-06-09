@@ -56,6 +56,11 @@ class MemoDelete(DeleteView):
     model = Day
     template_name = "memo_delete.html"
     success_url = "/daily/"
+    
+# class MemoDelete(View):
+#     def get(self, request):
+#         Day.objects.get(pk=day_id).update(memo=None)
+#         return render(request, "dayily_view.html")
 
 @method_decorator(login_required, name='dispatch')
 class DailySchedule(TemplateView):
@@ -67,24 +72,20 @@ class DailySchedule(TemplateView):
         context = super().get_context_data(**kwargs)
         context["days"] = Day.objects.filter(date__in=[today, tomorrow]) 
         return context
-    
-# class DailySchedule(TemplateView):
-#     template_name = "daily_view.html"
-#     def get_context_data(self, **kwargs):
-#         # https://stackoverflow.com/questions/11245483/django-filter-events-occurring-today
-#         context = super().get_context_data(**kwargs)
-#         today = datetime.now().date()
-#         tomorrow = today + timedelta(1)
-#         context["days"] = Day.objects.filter(date__in=[today, tomorrow])
-#         context["today"] = Day.objects.filter(today)
-#         context["tomorrow"] = tomorrow
-#         return context
+
     
 class WeeklySchedule(TemplateView):
     template_name = "weekly_view.html"
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context["days"] = Day.objects.all()
+        date = datetime.now().date()
+        week_start = date - timedelta(date.weekday())
+        week_end = week_start + timedelta(6)
+        day_of_week = date.isoweekday()
+        context["first_day"] = week_start
+        context["last_day"] = week_end
+        context["week_day"] = day_of_week
+        context["days"] = Day.objects.filter(date__range=[week_start, week_end]) 
         return context
     
 class Signup(View):

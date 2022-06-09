@@ -4,9 +4,12 @@ body {
     min-height: 100vh;
     background-color: #E8F6F9;
     /* background: url("../image/background.png"); */
-    /* background-image: linear-gradient(#FCD729, #F3F8F9); */
+    /* background-image: linear-gradient(#E8F6F9, #228db2); */
 }
 
+/* .upper-container {
+
+} */
 .container {
     flex: 1;
 }
@@ -14,6 +17,12 @@ body {
 .category {
     font-size: 1.1rem;
     font-weight: bold;
+}
+
+/****** Navigation Bar ********/
+
+.sun {
+    width: 5rem;
 }
 
 .navbar {
@@ -27,13 +36,34 @@ body {
     font-size: 2rem;
 }
 
+/****** Schedule Card *******/
+
+.card-header{
+    font-family: 'Gamja Flower', cursive;
+    font-size: 30px;
+    background: url("../image/sky.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* filter: saturate(75%); */
+    /* background-color: #FCD729; */
+}
+
+.card {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: solid 0.01px #d3d3d3;
+    border-radius: 1%;
+    box-shadow: 5px 5px 5px #e5e5e5;
+    background-color: white;
+}
+
 .instruction {
-    color: powderblue;
+    color: #89d1da;
     font-size: 1rem;
 }
 
 .fa-delete-left {
-    color: powderblue;
+    color: #89d1da;
     font-size: 0.85rem;
     margin-left: 0.3rem;
 }
@@ -43,7 +73,6 @@ body {
     padding-bottom: 0.5rem;
     
 } */
-
 
 .day {
     font-size: 2rem;
@@ -58,9 +87,16 @@ body {
     /* margin-bottom: 0.5rem; */
 }
 
-.add-day-btn, .day-view-btn, .create-day-btn {
+.links {
+    color: black;
+}
+
+/***** Buttons *******/
+
+.add-day-btn, .day-view-btn, .create-day-btn, .weekly-btn {
     background-color: #FCD729;
     border-radius: 0.3rem;
+    /* font-family: 'Gamja Flower', cursive; */
 }
 
 .btn-container, .day-view-btn-container {
@@ -76,6 +112,7 @@ body {
     font-size: 50px;
 } */
 
+/******** Photos *******/
 .children, .children2 {
     width: 100%;
     border-radius: 1%;
@@ -87,9 +124,27 @@ body {
     justify-content: center;
 }
 
-.links {
-    color: black;
+/******* Weekly View ******/
+.week-of {
+    font-family: 'Gamja Flower', cursive;
+    font-size: 2rem;
+    margin-bottom: 0px;
+    margin-top: 10px;
 }
+
+.week-range, .week-date {
+    font-size: 1.5rem;
+}
+
+.smiling-girl {
+    margin-top: 0px;
+    width: 100%;
+    border-radius: 1%;
+    box-shadow: 5px 5px 5px #e5e5e5;
+    margin-top: 20px;
+}
+
+/******* Footer *******/
 
 footer {
     background: url("../image/sky.png");
@@ -103,27 +158,10 @@ footer {
     margin-top: 2rem;
 }
 
-.card-header{
-    font-family: 'Gamja Flower', cursive;
-    font-size: 30px;
-    background: url("../image/sky.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-    /* filter: saturate(75%); */
-    /* background-color: #FCD729; */
-}
-.sun {
-    width: 5rem;
-}
 
-.card {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    border: solid 0.01px #d3d3d3;
-    border-radius: 1%;
-    box-shadow: 5px 5px 5px #e5e5e5;
-    background-color: white;
-}
+
+
+
 
 /* .add-page-background {
     background: url("../image/background.png");
@@ -131,7 +169,17 @@ footer {
     background-repeat: no-repeat;
 } */
 
-.sun-logoff {
-    width:33%;
-    
+.log-off {
+   background-color: white !important; 
+   display: flex;
+   justify-content: center;
+}
+
+.children-logoff {
+    width:70%;
+    display: block;
+}
+
+.bye-message{
+    font-family: 'Gamja Flower', cursive;
 }

@@ -1,16 +1,41 @@
 {% extends 'base.html' %}
 {% block content %}
-<!-- <div> Need looping through days for the given week?  
-</div>  -->
-<h1>Week: {{}} - {{}}</h1>
+<h1 class="week-of">Week <span class="week-range">{{first_day}} - {{last_day}}</span></h1>
+<div class="upper-container">
+    <div class="children-container">
+        <img class="smiling-girl" src="../static/image/smiling-girl.png" alt="a smiling girl in yellow t-shirt">
+    </div>
+    <div class="btn-container">
+        <a href="{% url 'daily_schedule' %}"><button class="weekly-btn">Daily View</button></a>
+        <a href="{% url 'day_create' %}"><button class="add-day-btn">Add New Day</button></a>
+    </div>
+</div>
+
+<!-- <div class="card mb-3" style="max-width: 540px;">
+    <div class="row no-gutters">
+      <div class="col-md-4">
+        <img src="..." class="card-img" alt="...">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+
 {% for day in days %}
 <div class="card">
     <div class="card-header">
-        <span class="day">{{day.date|naturalday|capfirst}}</span> <span class="date">{{day.date}}</span>
+        <span>{{day_of_week}}</span><span class="week-date">{{day.date}}</span>
     </div>
     <div class="card-body">
         <span class="instruction">* Click contents to edit.</span><br>
-       <span class="category">Schedule</span>
+        
+        <span class="category">Schedule</span>
         <!-- <img class="pencil" src="../static/image/pencil.png" alt="blue pencil"> -->
         
         <ul>
