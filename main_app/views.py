@@ -132,6 +132,6 @@ class Signup(View):
             context = {"form": form}
             return render(request, "registration/signup.html", context)
         
-class LogOut(TemplateView):
-    template_name = "log_off.html"
-    success_url = "/"   
+# class LogOut(TemplateView):
+#     template_name = "log_off.html"
+#     success_url = "/"   
