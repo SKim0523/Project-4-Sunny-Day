@@ -35,7 +35,7 @@
     </div>
     <div class="card-body">
         <span class="instruction">* Click contents to edit.</span><br>
-        
+        <a class ="links" href="{% url 'schedule_create2' day.id %}"><i class="fa-solid fa-calendar-plus"></i></a>
         <span class="category">Schedule</span>
         <!-- <img class="pencil" src="../static/image/pencil.png" alt="blue pencil"> -->
         
@@ -46,8 +46,8 @@
             </li>
             {% endfor %}
         </ul>
+        <a class ="links" href="/memo/{{day.id}}/update"><i class="fa-solid fa-heart-circle-plus"></i></a>
         <span class="category">Memo</span><br>
-        <!-- <img class="pencil" src="../static/image/pencil.png" alt="blue pencil"><br> -->
         <span class="memo"><a class ="links" href="/memo/{{day.id}}/update">{{day.memo}}</a>
             <a href="/memo/{{day.id}}/delete"><i class="fa-solid fa-delete-left"></i></a>
         </span>              

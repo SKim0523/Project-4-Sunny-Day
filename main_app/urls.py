@@ -11,7 +11,6 @@ urlpatterns = [
     # Create
     path('day/new', views.DayCreate.as_view(), name="day_create"),
     path('schedule/new/<int:day_id>', views.ScheduleCreate.as_view(), name="schedule_create2"),
-    # path('schedule/new/', views.ScheduleCreate.as_view(), name="schedule_create2"),
     
     # Update
     path('schedule/<int:pk>/update',
@@ -22,8 +21,8 @@ urlpatterns = [
     # Delete
     path('schedule/<int:pk>/delete',
         views.ScheduleDelete.as_view(), name="schedule_delete"),
-    path('memo/<int:pk>/delete',
-        views.MemoDelete.as_view(), name="memo_delete"),
+    # path('memo/<int:pk>/delete',
+    #     views.MemoDelete.as_view(), name="memo_delete"),
    
     # Sign on / Sign off
     path('accounts/signup/', views.Signup.as_view(), name="signup"),

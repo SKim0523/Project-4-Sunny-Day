@@ -19,20 +19,15 @@
     </div>
     <div class="card-body">
         <span class="instruction">* Click contents to edit.</span><br>
-        {{day.id}}
         <a class ="links" href="{% url 'schedule_create2' day.id %}"><i class="fa-solid fa-calendar-plus"></i></a><span class="category">Schedule</span>
         <ul>
             {% for schedule in day.schedules.all %}
             <li><a class ="links" href="/schedule/{{schedule.id}}/update">{{schedule.time}}</a> | <a class ="links" href="/schedule/{{schedule.id}}/update">{{schedule.content}}</a>
             <a href="/schedule/{{schedule.id}}/delete"><i class="fa-solid fa-delete-left"></i></a>      
-            <!-- <li><a class ="links" href="{% url 'schedule_update' schedule.pk %}">{{schedule.time}}</a> | <a class ="links" href="{% url 'schedule_update' schedule.pk %}">{{schedule.content}}</a> -->
-                <!-- <a href="{% url 'schedule_update' schedule.pk %}"><i class="fa-solid fa-delete-left"></i></a>
-            </li> -->
             {% endfor %}
         </ul>
         <a class ="links" href="/memo/{{day.id}}/update"><i class="fa-solid fa-heart-circle-plus"></i></a><span class="category">Memo</span><br>
         <span class="memo"><a class ="links" href="/memo/{{day.id}}/update">{{day.memo}}</a>
-            <!-- <a href="/memo/{{day.id}}/delete"><i class="fa-solid fa-delete-left"></i></a> -->
         </span>              
     </div>
 </div>
