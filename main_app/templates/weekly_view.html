@@ -7,6 +7,7 @@
     </div>
     <div class="btn-container">
         <a href="{% url 'daily_schedule' %}"><button class="weekly-btn">Daily View</button></a>
+        <a href="{% url 'weekly_schedule' %}"><button class="weekly-btn">Monthly View</button></a>
         <a href="{% url 'day_create' %}"><button class="add-day-btn">Add New Day</button></a>
     </div>
 </div>
@@ -30,7 +31,7 @@
 {% for day in days %}
 <div class="card">
     <div class="card-header">
-        <span>{{day_of_week}}</span><span class="week-date">{{day.date}}</span>
+        <span>{{ day.date|date:" l " }}</span><span class="week-date">{{day.date}}</span>
     </div>
     <div class="card-body">
         <span class="instruction">* Click contents to edit.</span><br>

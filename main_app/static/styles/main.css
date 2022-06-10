@@ -11,12 +11,9 @@ body {
     background-color: white !important;
 }
 
-/* .upper-container {
-
-} */
-.container {
+/* .container {
     flex: 1;
-}
+} */
 
 .category {
     font-size: 1.1rem;
@@ -122,9 +119,6 @@ body {
 
 .btn-container, .day-view-btn-container {
     text-align: right;
-}
-
-.btn-container {
     margin-top: 20px;
 }
 
@@ -154,6 +148,7 @@ body {
 .children-container{
     display: flex;
     justify-content: center;
+    width: 100%;
 }
 
 .login-container{

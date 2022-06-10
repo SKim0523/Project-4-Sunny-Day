@@ -13,7 +13,7 @@ from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 # from .forms import ScheduleCreateForm, DayCreateForm
 
-# Below saves data to the database
+
 @method_decorator(login_required, name='dispatch')
 class DayCreate(View):
     def get(self, request):
@@ -30,26 +30,22 @@ class DayCreate(View):
         return redirect('daily_schedule')
 
 
-
 class ScheduleCreate(View):
+    # def get_context_data(self, **kwargs):
+    #     context = super().get_context_data(**kwargs)
+    #     context["day_id"] = self.GET.get("day_id")
+    #     print(context)
+    #     return context
+    
     def get(self, request, day_id, *args, **kwargs):
-        print(request.session.items())
-        dayId = request.GET.get("day_id")
-        print(dayId)
         return render(request, "schedule_create2.html")
     
-    def post(self, request):
+    def post(self, request, day_id):
         time = request.POST.get("time")
         content = request.POST.get("content")
-        print(request.day_id)
-       
-        # Schedule.objects.create(time=time, content=content, day_id=dayId)
-        
+        Schedule.objects.create(time=time, content=content, day_id=day_id)
         return redirect('daily_schedule')
     
-
-
-
 
 @method_decorator(login_required, name='dispatch')
 class ScheduleUpdate(UpdateView):
@@ -58,12 +54,14 @@ class ScheduleUpdate(UpdateView):
     template_name = "schedule_update.html"
     success_url = "/daily/"
     
+    
 @method_decorator(login_required, name='dispatch')    
 class MemoUpdate(UpdateView):
     model = Day
     fields = ['memo']
     template_name = "memo_update.html"
     success_url = "/daily/"   
+
 
 @method_decorator(login_required, name='dispatch')
 class ScheduleDelete(DeleteView):
@@ -93,7 +91,7 @@ class DailySchedule(TemplateView):
         context["days"] = Day.objects.filter(date__in=[today, tomorrow]) 
         return context
 
-    
+@method_decorator(login_required, name='dispatch')
 class WeeklySchedule(TemplateView):
     template_name = "weekly_view.html"
     def get_context_data(self, **kwargs):
@@ -107,6 +105,17 @@ class WeeklySchedule(TemplateView):
         context["week_day"] = day_of_week
         context["days"] = Day.objects.filter(date__range=[week_start, week_end]) 
         return context
+
+class MonthlySchedule(TemplateView):
+    template_name = "monthly_view.html"
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        today = datetime.now().date()
+        context["first_day"] = month_start
+        context["last_day"] = month_end
+        context["days"] = Day.objects.filter(date__range=[month_start, month_end]) 
+        return context
+    
     
 class Signup(View):
     def get(self, request):

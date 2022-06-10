@@ -9,7 +9,13 @@
         Add New Schedule
     </div>
     <div class="card-body">
-<form method="post" action="{% url 'schedule_create2' %}">
+<form method="post" action=""> 
+    {% comment %}
+    submitting the form to the same page
+    if I leave the action link blank, it meansthat the form will be submitted to the url that the form was presented on. 
+    in Django this usually means that the view which presented the form with its GET function will process the form using the POST funtion. 
+    {% endcomment %}
+
     {% csrf_token %}
     <div>
         <div>
@@ -26,14 +32,6 @@
             type="text"
             name="content"
             placeholder="Content"
-            />
-        </div><br>
-        <div>
-            DayID:
-            <input 
-            type="text"
-            name="dayId"
-            value="{{day_id}}"
             />
         </div><br>
         <div>

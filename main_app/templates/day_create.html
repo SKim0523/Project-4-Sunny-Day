@@ -1,60 +1,62 @@
 {% extends 'base.html' %}
 {% block content %}
+
 <div class="children-container">
     <img class="children2" src="../static/image/children2.png" alt="smiling children putting arms around one another's shoulders">
 </div>
-<div class="add-page-background">
+
+<div class="day-view-btn-container">
+    <a href="{% url 'daily_schedule' %}"><button class="day-view-btn">Daily View</button></a>
+    <a href="{% url 'weekly_schedule' %}"><button class="weekly-btn">Monthly View</button></a>
+    <a href="{% url 'weekly_schedule' %}"><button class="weekly-btn">Weekly View</button></a>
+</div>
+
 <div class="card">
     <div class="card-header">
         Add New Day
     </div>
-    <div class="card-body">
-<form method="post" action="{% url 'day_create' %}">
-    {% csrf_token %}
-    <div>
-        <div>
-            Date:
-            <input 
-            type="text"
-            name="date"
-            placeholder="YYYY-MM-DD"
-            />
-        </div><br>
-        <div>
-            Schedule Time:
-            <input 
-            type="text"
-            name="time"
-            placeholder="e.g. 13:00 for 1:00 pm"
-            />
-        </div><br>
-        <div>
-            Schedule:
-            <input 
-            type="text"
-            name="content"
-            placeholder="Content"
-            />
-        </div><br>
-        <div>
-            Memo:
-            <input 
-            type="text"
-            name="memo"
-            placeholder="Content"
-            />
-        </div><br>
-        <div>
-            <input class="create-day-btn" type="submit" value="Create Day" />
-        </div>
-    </div>  
-</form>
-</div>
-</div>
-    <div class="day-view-btn-container">
-    <a href="{% url 'daily_schedule' %}"><button class="day-view-btn">Daily View</button></a>
-    <a href="{% url 'weekly_schedule' %}"><button class="weekly-btn">Weekly View</button></a>
-    </div>
-</div>
 
+    <div class="card-body">
+        <form method="post" action="{% url 'day_create' %}">
+            {% csrf_token %}
+            <div>
+                <div>
+                    Date:
+                    <input 
+                    type="text"
+                    name="date"
+                    placeholder="YYYY-MM-DD"
+                    />
+                </div><br>
+                <div>
+                    Schedule Time:
+                    <input 
+                    type="text"
+                    name="time"
+                    placeholder="e.g. 13:00 for 1:00 pm"
+                    />
+                </div><br>
+                <div>
+                    Schedule:
+                    <input 
+                    type="text"
+                    name="content"
+                    placeholder="Content"
+                    />
+                </div><br>
+                <div>
+                    Memo:
+                    <input 
+                    type="text"
+                    name="memo"
+                    placeholder="Content"
+                    />
+                </div><br>
+                <div>
+                    <input class="create-day-btn" type="submit" value="Create Day" />
+                </div>
+            </div>  
+        </form>
+    </div>
+</div>    
 {% endblock %}
