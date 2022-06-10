@@ -31,11 +31,6 @@ class DayCreate(View):
 
 
 class ScheduleCreate(View):
-    # def get_context_data(self, **kwargs):
-    #     context = super().get_context_data(**kwargs)
-    #     context["day_id"] = self.GET.get("day_id")
-    #     print(context)
-    #     return context
     
     def get(self, request, day_id, *args, **kwargs):
         return render(request, "schedule_create2.html")
@@ -44,8 +39,9 @@ class ScheduleCreate(View):
         time = request.POST.get("time")
         content = request.POST.get("content")
         Schedule.objects.create(time=time, content=content, day_id=day_id)
-        return redirect('daily_schedule')
-    
+        return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
+
+ 
 
 @method_decorator(login_required, name='dispatch')
 class ScheduleUpdate(UpdateView):
@@ -131,7 +127,3 @@ class Signup(View):
         else:
             context = {"form": form}
             return render(request, "registration/signup.html", context)
-        
-# class LogOut(TemplateView):
-#     template_name = "log_off.html"
-#     success_url = "/"   
