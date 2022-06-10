@@ -3,17 +3,11 @@ body {
     flex-direction: column;
     min-height: 100vh;
     background-color: #E8F6F9;
-    /* background: url("../image/background.png"); */
-    /* background-image: linear-gradient(#E8F6F9, #228db2); */
 }
 
 .login-page-body {
     background-color: white !important;
 }
-
-/* .container {
-    flex: 1;
-} */
 
 .category {
     font-size: 1.1rem;
@@ -45,8 +39,6 @@ body {
     background: url("../image/sky.png");
     background-size: cover;
     background-repeat: no-repeat;
-    /* filter: saturate(75%); */
-    /* background-color: #FCD729; */
 }
 
 .card {
@@ -74,12 +66,6 @@ body {
     font-size: 0.85rem;
     margin-left: 0.3rem;
 }
-
-/* .pencil {
-    width: 1.5rem;
-    padding-bottom: 0.5rem;
-    
-} */
 
 .day {
     font-size: 2rem;
@@ -125,10 +111,6 @@ body {
 .login-form {
     margin-top: 1rem;
 }
-/* .edit-memo, .edit-schedule {
-    font-family: 'Gamja Flower', cursive;
-    font-size: 50px;
-} */
 
 /******** Photos *******/
 .children, .children2 {
@@ -196,12 +178,6 @@ footer {
     font-size: 0.75rem;
     margin-top: 2rem;
 }
-
-/* .add-page-background {
-    background: url("../image/background.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-} */
 
 .log-off {
    display: flex;
