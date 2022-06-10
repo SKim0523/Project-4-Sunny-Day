@@ -42,7 +42,6 @@ class ScheduleCreate(View):
         return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
 
  
-
 @method_decorator(login_required, name='dispatch')
 class ScheduleUpdate(UpdateView):
     model = Schedule
