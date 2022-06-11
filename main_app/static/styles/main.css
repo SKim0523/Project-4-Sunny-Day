@@ -1,12 +1,15 @@
-body {
+/* Citation: Button style >> https://www.bestcssbuttongenerator.com/#/26 */
+
+body, .login-page-body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
     background-color: #E8F6F9;
 }
 
-.login-page-body {
-    background-color: white !important;
+.signup-title {
+    font-size: 1.3rem;
+    margin-top: 1rem;
 }
 
 .category {
@@ -86,9 +89,34 @@ body {
 
 /***** Buttons *******/
 
-.add-day-btn, .day-view-btn, .create-day-btn, .weekly-btn, .create-schedule2-btn {
+/* .add-day-btn, .day-view-btn, .create-day-btn, .weekly-btn, .create-schedule2-btn {
     background-color: #FCD729;
     border-radius: 0.3rem;
+} */
+
+.add-day-btn, .day-view-btn, .create-day-btn, .weekly-btn, .create-schedule2-btn, .login-btn, .signup-btn {
+	box-shadow:inset 0px 1px 0px 0px #fff6af;
+	background:linear-gradient(to bottom, #ffec64 5%, #ffab23 100%);
+	background-color:#ffec64;
+	border-radius:6px;
+	border:1px solid #ffaa22;
+	display:inline-block;
+	cursor:pointer;
+	color:black;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ffee66;
+}
+.add-day-btn:hover, .day-view-btn:hover, .create-day-btn:hover, .weekly-btn:hover, .create-schedule2-btn:hover, .login-btn:hover, .signup-btn:hover {
+	background:linear-gradient(to bottom, #ffab23 5%, #ffec64 100%);
+	background-color:#ffab23;
+}
+.add-day-btn:active, .day-view-btn:active, .create-day-btn:active, .weekly-btn:active, .create-schedule2-btn:active, .login-btn:active, .signup-btn:active {
+	position:relative;
+	top:1px;
 }
 
 .login-btn {
@@ -120,8 +148,8 @@ body {
     margin-top: 20px;
 }
 
-.children3 {
-    width: 80%;
+.children3  {
+    width: 70%;
     border-radius: 1%;
     box-shadow: 5px 5px 5px #e5e5e5;
     margin-top: 20px;
@@ -139,10 +167,13 @@ body {
 }
 
 .log-in {
-    font-family: 'Gamja Flower', cursive;
     margin-top: 1rem;
     margin-right: 2rem;
     font-size: 1.5rem;
+}
+
+.sinup-photo {
+    width: 90%;
 }
 
 /******* Weekly View ******/

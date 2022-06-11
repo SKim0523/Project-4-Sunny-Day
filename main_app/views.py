@@ -29,7 +29,7 @@ class DayCreate(View):
         Schedule.objects.create(time=time, content=content, day_id=dayContent.id)
         return redirect('daily_schedule')
 
-
+@method_decorator(login_required, name='dispatch')
 class ScheduleCreate(View):
     
     def get(self, request, day_id, *args, **kwargs):

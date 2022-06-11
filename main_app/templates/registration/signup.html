@@ -1,9 +1,10 @@
 {% extends 'base.html' %} {% block content %}
 
-<h1 class="title">Sign Up</h1>
+<h1 class="signup-title">Sign Up</h1>
+<img class="sinup-photo" src="/static/image/five-photos.png" alt="collage of children image">
 <form method="post" action="{% url 'signup' %}">
     {% csrf_token %} {{ form.as_p }}
-    <input type="submit" class="btn" value="Sign Up" />
+    <input type="submit" class="signup-btn" value="Sign Up" />
     <input type="hidden" name="next" value="{{ next }}" />
 </form>
 
