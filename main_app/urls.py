@@ -6,7 +6,7 @@ urlpatterns = [
     # Daily / Weekly / Monthly
     path('daily/', views.DailySchedule.as_view(), name="daily_schedule"), 
     path('weekly/', views.WeeklySchedule.as_view(), name="weekly_schedule"),
-    path('monthly/', views.WeeklySchedule.as_view(), name="weekly_schedule"),
+    path('monthly/', views.MonthlySchedule.as_view(), name="monthly_schedule"),
     
     # Create
     path('day/new', views.DayCreate.as_view(), name="day_create"),

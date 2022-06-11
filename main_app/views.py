@@ -106,6 +106,8 @@ class MonthlySchedule(TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         today = datetime.now().date()
+        month_start = today - timedelta(today.weekday())
+        month_end = month_start + timedelta(6)
         context["first_day"] = month_start
         context["last_day"] = month_end
         context["days"] = Day.objects.filter(date__range=[month_start, month_end]) 

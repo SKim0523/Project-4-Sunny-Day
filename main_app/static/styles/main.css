@@ -94,7 +94,7 @@ body, .login-page-body {
     border-radius: 0.3rem;
 } */
 
-.add-day-btn, .day-view-btn, .create-day-btn, .weekly-btn, .create-schedule2-btn, .login-btn, .signup-btn {
+.add-day-btn, .day-view-btn, .create-day-btn, .weekly-btn, .create-schedule2-btn, .login-btn, .signup-btn, .monthly-btn {
 	box-shadow:inset 0px 1px 0px 0px #fff6af;
 	background:linear-gradient(to bottom, #ffec64 5%, #ffab23 100%);
 	background-color:#ffec64;
@@ -110,11 +110,11 @@ body, .login-page-body {
 	text-decoration:none;
 	text-shadow:0px 1px 0px #ffee66;
 }
-.add-day-btn:hover, .day-view-btn:hover, .create-day-btn:hover, .weekly-btn:hover, .create-schedule2-btn:hover, .login-btn:hover, .signup-btn:hover {
+.add-day-btn:hover, .day-view-btn:hover, .create-day-btn:hover, .weekly-btn:hover, .create-schedule2-btn:hover, .login-btn:hover, .signup-btn:hover, .monthly-btn:hover {
 	background:linear-gradient(to bottom, #ffab23 5%, #ffec64 100%);
 	background-color:#ffab23;
 }
-.add-day-btn:active, .day-view-btn:active, .create-day-btn:active, .weekly-btn:active, .create-schedule2-btn:active, .login-btn:active, .signup-btn:active {
+.add-day-btn:active, .day-view-btn:active, .create-day-btn:active, .weekly-btn:active, .create-schedule2-btn:active, .login-btn:active, .signup-btn:active, .monthly-btn:active {
 	position:relative;
 	top:1px;
 }
@@ -172,9 +172,6 @@ body, .login-page-body {
     font-size: 1.5rem;
 }
 
-.sinup-photo {
-    width: 90%;
-}
 
 /******* Weekly View ******/
 .week-of {
@@ -215,10 +212,10 @@ footer {
    justify-content: center;
 }
 
-.children_plus_illustration {
-    width:80%;
+.signup-photo {
+    width:90%;
     margin-top: 2rem;
-    margin-bottom: 1rem;
+    margin-bottom: 20px;
     border: solid 0.01px #d3d3d3;
     border-radius: 1%;
     box-shadow: 5px 5px 5px #e5e5e5;
