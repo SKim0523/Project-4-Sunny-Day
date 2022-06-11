@@ -87,14 +87,16 @@ body, .login-page-body {
     color: black;
 }
 
+.edit-memo, .month-name {
+    font-size: 1.3rem;
+    margin-top: 0.8rem;
+    margin-bottom: 0px;
+}
+
+
 /***** Buttons *******/
 
-/* .add-day-btn, .day-view-btn, .create-day-btn, .weekly-btn, .create-schedule2-btn {
-    background-color: #FCD729;
-    border-radius: 0.3rem;
-} */
-
-.add-day-btn, .day-view-btn, .create-day-btn, .weekly-btn, .create-schedule2-btn, .login-btn, .signup-btn, .monthly-btn {
+.add-day-btn, .day-view-btn, .create-day-btn, .weekly-btn, .create-schedule2-btn, .login-btn, .signup-btn, .monthly-btn, .edit-memo-btn {
 	box-shadow:inset 0px 1px 0px 0px #fff6af;
 	background:linear-gradient(to bottom, #ffec64 5%, #ffab23 100%);
 	background-color:#ffec64;
@@ -110,11 +112,11 @@ body, .login-page-body {
 	text-decoration:none;
 	text-shadow:0px 1px 0px #ffee66;
 }
-.add-day-btn:hover, .day-view-btn:hover, .create-day-btn:hover, .weekly-btn:hover, .create-schedule2-btn:hover, .login-btn:hover, .signup-btn:hover, .monthly-btn:hover {
+.add-day-btn:hover, .day-view-btn:hover, .create-day-btn:hover, .weekly-btn:hover, .create-schedule2-btn:hover, .login-btn:hover, .signup-btn:hover, .monthly-btn:hover, .edit-memo-btn:hover {
 	background:linear-gradient(to bottom, #ffab23 5%, #ffec64 100%);
 	background-color:#ffab23;
 }
-.add-day-btn:active, .day-view-btn:active, .create-day-btn:active, .weekly-btn:active, .create-schedule2-btn:active, .login-btn:active, .signup-btn:active, .monthly-btn:active {
+.add-day-btn:active, .day-view-btn:active, .create-day-btn:active, .weekly-btn:active, .create-schedule2-btn:active, .login-btn:active, .signup-btn:active, .monthly-btn:active, .edit-memo-btn:active {
 	position:relative;
 	top:1px;
 }
@@ -136,23 +138,28 @@ body, .login-page-body {
     margin-top: 20px;
 }
 
+.day-view-btn-container2 {
+    text-align: right;
+    margin-top: 0px;
+    margin-bottom: 20px;
+}
+
 .login-form {
     margin-top: 1rem;
 }
 
 /******** Photos *******/
-.children, .children2 {
+
+.children, .children2, .children3, .smiling-girl, .rainbow-boy, .rain-girl  {
+    margin-top: 0px;
     width: 100%;
     border-radius: 1%;
-    box-shadow: 5px 5px 5px #e5e5e5;
+    box-shadow: 5px 5px 5px grey;
     margin-top: 20px;
 }
 
-.children3  {
-    width: 70%;
-    border-radius: 1%;
-    box-shadow: 5px 5px 5px #e5e5e5;
-    margin-top: 20px;
+.rain-girl {
+    margin-bottom: 1.2rem;
 }
 
 .children-container{
@@ -185,13 +192,6 @@ body, .login-page-body {
     font-size: 1.5rem;
 }
 
-.smiling-girl {
-    margin-top: 0px;
-    width: 100%;
-    border-radius: 1%;
-    box-shadow: 5px 5px 5px #e5e5e5;
-    margin-top: 20px;
-}
 
 /******* Footer *******/
 

@@ -6,7 +6,8 @@ from django.views.generic.base import TemplateView
 from .models import Day, Schedule
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse
-from datetime import datetime, timedelta, time
+import calendar
+from datetime import date, datetime, timedelta, time
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
@@ -106,8 +107,10 @@ class MonthlySchedule(TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         today = datetime.now().date()
+        current_month_name = calendar.month_name[date.today().month]
         month_start = today - timedelta(today.weekday())
         month_end = month_start + timedelta(6)
+        context["current_month"] = current_month_name
         context["first_day"] = month_start
         context["last_day"] = month_end
         context["days"] = Day.objects.filter(date__range=[month_start, month_end]) 
