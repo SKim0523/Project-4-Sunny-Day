@@ -1,15 +1,42 @@
 {% extends 'base.html' %}
 {% block content %}
-<h1 class="month-name">{{current_month}}</h1>
+<h1 class="month-name">{{current_month}}<i class="fa-solid fa-cloud"></i></h1>
 <div class="upper-container">
     <div class="children-container">
         <img class="rainbow-boy" src="../static/image/rainbow-boy.jpg" alt="a boy drawing rainbow on window">
     </div>
+
     <div class="btn-container">
         <a href="{% url 'daily_schedule' %}"><button class="weekly-btn">Daily View</button></a>
         <a href="{% url 'weekly_schedule' %}"><button class="weekly-btn">Weekly View</button></a>
         <a href="{% url 'day_create' %}"><button class="add-day-btn">Add New Day</button></a>
     </div>
+    
+    {% for day in days %}
+    <div class="card">
+        <div class="card-header">
+            <span>{{ day.date|date:" l " }}</span><span class="week-date">{{day.date}}</span>
+        </div>
+        <div class="card-body">
+            <span class="instruction">* Click contents to edit.</span><br>
+            <a class ="links" href="{% url 'schedule_create2' day.id %}"><i class="fa-solid fa-calendar-plus"></i></a>
+            <span class="category">Schedule</span>
+            <ul>
+                {% for schedule in day.schedules.all %}
+                <li><a class ="links" href="/schedule/{{schedule.id}}/update">{{schedule.time}}</a> | <a class ="links" href="/schedule/{{schedule.id}}/update">{{schedule.content}}</a>
+                    <a href="/schedule/{{schedule.id}}/delete"><i class="fa-solid fa-delete-left"></i></a>
+                </li>
+                {% endfor %}
+            </ul>
+            <a class ="links" href="/memo/{{day.id}}/update"><i class="fa-solid fa-heart-circle-plus"></i></a>
+            <span class="category">Memo</span><br>
+            <span class="memo"><a class ="links" href="/memo/{{day.id}}/update">{{day.memo}}</a>
+                <a href="/memo/{{day.id}}/delete"><i class="fa-solid fa-delete-left"></i></a>
+            </span>              
+        </div>
+    </div>
+    {% endfor %}
+
 </div>
 <!-- Need to display Calendar -->
 {% endblock %}

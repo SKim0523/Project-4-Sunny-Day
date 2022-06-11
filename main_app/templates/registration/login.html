@@ -38,16 +38,14 @@
             <img class="children3" src="/static/image/five-photos.png" alt="smiling children with background illustration">
         </div>
         <div class="login-container">
-          
-        <h1 class="log-in">Log In</h1>
-       
-        <div class="login-form"> 
-        <form method="post" action="{% url 'login' %}">
-            {% csrf_token %} {{ form.as_p }}
-            <span class="login-btn-container"><input type="submit" value="Submit" class="login-btn"/></span>
-            <input type="hidden" name="next" value="{{ next }}" />
-        </form>
-        </div> 
+            <h1 class="log-in">Log In</h1>
+            <div class="login-form"> 
+                <form method="post" action="{% url 'login' %}">
+                    {% csrf_token %} {{ form.as_p }}
+                    <span class="login-btn-container"><input type="submit" value="Submit" class="login-btn"/></span>
+                    <input type="hidden" name="next" value="{{ next }}" />
+                </form>
+            </div> 
         </div>
     </body>
     <footer>

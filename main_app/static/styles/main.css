@@ -70,6 +70,12 @@ body, .login-page-body {
     margin-left: 0.3rem;
 }
 
+.fa-cloud {
+    color: white;
+    margin-left: 0.3rem;
+    -webkit-text-stroke: 1px grey
+}
+
 .day {
     font-size: 2rem;
 }
@@ -154,12 +160,26 @@ body, .login-page-body {
     margin-top: 0px;
     width: 100%;
     border-radius: 1%;
-    box-shadow: 5px 5px 5px grey;
+    box-shadow: 5px 5px 5px lightgrey;
     margin-top: 20px;
+}
+
+.children3 {
+    width: 75%;
 }
 
 .rain-girl {
     margin-bottom: 1.2rem;
+}
+
+.signup-photo {
+    width:60%;
+    margin-top: 1rem;
+    margin-bottom: 20px;
+    border: solid 0.01px #d3d3d3;
+    border-radius: 1%;
+    box-shadow: 5px 5px 5px lightgrey;
+    background-color: white;
 }
 
 .children-container{
@@ -176,7 +196,7 @@ body, .login-page-body {
 .log-in {
     margin-top: 1rem;
     margin-right: 2rem;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
 }
 
 
@@ -210,17 +230,6 @@ footer {
 .log-off {
    display: flex;
    justify-content: center;
-}
-
-.signup-photo {
-    width:90%;
-    margin-top: 2rem;
-    margin-bottom: 20px;
-    border: solid 0.01px #d3d3d3;
-    border-radius: 1%;
-    box-shadow: 5px 5px 5px #e5e5e5;
-    background-color: white;
-
 }
 
 .bye-message{
