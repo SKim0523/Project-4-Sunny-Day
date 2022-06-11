@@ -64,13 +64,6 @@ class ScheduleDelete(DeleteView):
 
 
 @method_decorator(login_required, name='dispatch')
-class MemoDelete(DeleteView):
-    model = Day
-    template_name = "memo_delete.html"
-    success_url = "/daily/"
-
-
-@method_decorator(login_required, name='dispatch')
 class DailySchedule(TemplateView):
     template_name = "daily_view.html"
     def get_context_data(self, **kwargs):

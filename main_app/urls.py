@@ -21,10 +21,8 @@ urlpatterns = [
     # Delete
     path('schedule/<int:pk>/delete',
         views.ScheduleDelete.as_view(), name="schedule_delete"),
-    # path('memo/<int:pk>/delete',
-    #     views.MemoDelete.as_view(), name="memo_delete"),
-   
+    
     # Sign on / Sign off
     path('accounts/signup/', views.Signup.as_view(), name="signup"),
-    # path('/logout', views.LogOut.as_view(), name="logout")
+
 ]
