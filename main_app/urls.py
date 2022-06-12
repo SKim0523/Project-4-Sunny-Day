@@ -10,7 +10,7 @@ urlpatterns = [
     
     # Create
     path('day/new', views.DayCreate.as_view(), name="day_create"),
-    path('schedule/new/<int:day_id>', views.ScheduleCreate.as_view(), name="schedule_create2"),
+    path('schedule/new/<int:day_id>', views.ScheduleCreate.as_view(), name="schedule_create"),
     
     # Update
     path('schedule/<int:pk>/update',

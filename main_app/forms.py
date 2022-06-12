@@ -11,3 +11,4 @@ class ScheduleCreateForm(forms.ModelForm):
     class Meta:
         model = Schedule
         fields = ['time', 'content']
+    

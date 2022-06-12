@@ -186,7 +186,14 @@ body, .login-page-body {
 /******** Photos *******/
 
 .children, .children2, .children3, .smiling-girl, .rainbow-boy {
-    margin-top: 0px;
+    width: 100%;
+    border-radius: 1%;
+    box-shadow: 5px 5px 5px lightgrey;
+    margin-top: 20px;
+}
+
+
+.rainbow-boy{
     width: 100%;
     border-radius: 1%;
     box-shadow: 5px 5px 5px lightgrey;
@@ -270,8 +277,8 @@ footer {
     font-family: 'Gamja Flower', cursive;
 }
 
-/********* Calendar ***********/
-.calender-container {
+/********* Calendar 1 ***********/
+/* .calender-container {
    margin-top: 1rem;
 }
 
@@ -281,6 +288,7 @@ footer {
     margin-right: 1rem;
     align-items: center;
     flex-wrap: wrap;
+
 }
 
 .calendar2 {
@@ -288,8 +296,6 @@ footer {
     background-color: white;
     border-radius: 2%;
     padding: 0.5rem;
-    /* border: 1px solid #39CCFF; */
-    /* background: url("../image/rainbow.png"); */
 }
 
 .calendar2 h1 {
@@ -306,9 +312,18 @@ footer {
 .clendar-list {
     padding: 5px;
     text-align: center;
+    font-size: 1.3rem;
 }
 
-.calendar-date, .calendar-days {
+.calendar-date {
+    margin-right: 1.5rem;
+}
+
+.calendar-days{
+   
+    font-family: 'Gamja Flower', cursive;
+    font-size: 1.5rem;
+    text-align: center;
     margin-right: 1.5rem;
 }
 
@@ -318,7 +333,7 @@ footer {
     align-content: flex-start; 
 }
 
-.card {
+.item2 {
     flex-grow: 2;
 }
 
@@ -334,6 +349,58 @@ footer {
     font-size: 2rem;
     font-family: 'Gamja Flower', cursive;
 }
+
+.rainbow-hearts {
+    margin-top: 0.5rem;
+    width: 15%;
+}
+
+.spacer {
+    color:white;
+} */
+
+
+/******* Calendar 2 **********/
+
+.main {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+}
+
+.calendar {
+   display: grid;
+   grid-template-columns: repeat(7, 1fr);
+   grid-auto-rows: 100px;
+   padding: 20px;
+   box-shadow: 5px 5px 5px #e5e5e5;
+   background-color: white;
+   border-radius: 2%;
+}
+
+.number.is-Wednesday {
+    grid-column-start: 4;
+}
+
+.calendar-month {
+    font-size: 2rem;
+    font-family: 'Gamja Flower', cursive;
+    text-align: center;
+    margin-top: 0.5rem;
+}
+
+.rainbow-hearts {
+    margin-top: 0.5rem;
+    width: 15%;
+}
+
+.spacer {
+    color:white;
+} */
+
+
+
 
 /******* Delete Page *********/
 .delete-confirmation{
