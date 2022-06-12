@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% block title %}Weekly View{% endblock %}
 {% block content %}
 <h1 class="week-of">Week <span class="week-range">{{first_day}} - {{last_day}}</span></h1>
 <div class="upper-container">
@@ -6,9 +7,9 @@
         <img class="smiling-girl" src="../static/image/smiling-girl.png" alt="a smiling girl in yellow t-shirt">
     </div>
     <div class="btn-container">
-        <a href="{% url 'daily_schedule' %}"><button class="weekly-btn">Daily View</button></a>
-        <a href="{% url 'monthly_schedule' %}"><button class="monthly-btn">Monthly View</button></a>
-        <a href="{% url 'day_create' %}"><button class="add-day-btn">Add New Day</button></a>
+        <a href="{% url 'daily_schedule' %}"><button class="btn">Daily View</button></a>
+        <a href="{% url 'monthly_schedule' %}"><button class="btn">Monthly View</button></a>
+        <a href="{% url 'day_create' %}"><button class="btn">Add New Day</button></a>
     </div>
 </div>
 
@@ -26,7 +27,6 @@
       </div>
     </div>
   </div> -->
-
 
 {% for day in days %}
 <div class="card">

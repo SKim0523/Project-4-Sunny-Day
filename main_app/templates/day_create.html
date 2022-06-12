@@ -7,16 +7,15 @@
 </div>
 
 <div class="day-view-btn-container">
-    <a href="{% url 'daily_schedule' %}"><button class="day-view-btn">Daily View</button></a>
-    <a href="{% url 'weekly_schedule' %}"><button class="weekly-btn">Weekly View</button></a>
-    <a href="{% url 'monthly_schedule' %}"><button class="monthly-btn">Monthly View</button></a>
+    <a href="{% url 'daily_schedule' %}"><button class="btn">Daily View</button></a>
+    <a href="{% url 'weekly_schedule' %}"><button class="btn">Weekly View</button></a>
+    <a href="{% url 'monthly_schedule' %}"><button class="btn">Monthly View</button></a>
 </div>
 
 <div class="card">
     <div class="card-header">
         Add New Day</i>
     </div>
-
     <div class="card-body">
         <form method="post" action="{% url 'day_create' %}">
             {% csrf_token %}
@@ -54,7 +53,7 @@
                     />
                 </div><br>
                 <div>
-                    <input class="create-day-btn" type="submit" value="Create Day" />
+                    <input class="btn" type="submit" value="Create Day" />
                 </div>
             </div>  
         </form>

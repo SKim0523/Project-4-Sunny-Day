@@ -6,9 +6,9 @@
 </div>
 
 <div class="day-view-btn-container">
-    <a href="{% url 'daily_schedule' %}"><button class="day-view-btn">Daily View</button></a>
-    <a href="{% url 'weekly_schedule' %}"><button class="weekly-btn">Weekly View</button></a>
-    <a href="{% url 'monthly_schedule' %}"><button class="monthly-btn">Monthly View</button></a>
+    <a href="{% url 'daily_schedule' %}"><button class="btn">Daily View</button></a>
+    <a href="{% url 'weekly_schedule' %}"><button class="btn">Weekly View</button></a>
+    <a href="{% url 'monthly_schedule' %}"><button class="btn">Monthly View</button></a>
 </div>
 
 <div class="card">
@@ -17,34 +17,9 @@
     </div>
     <div class="card-body">
         <form method="post" action=""> 
-            {% comment %}
-            submitting the form to the same page
-            if I leave the action link blank, it means that the form will be submitted to the url that the form was presented on. 
-            in Django this usually means that the view which presented the form with its GET function will process the form using the POST funtion. 
-            {% endcomment %}
-
             {% csrf_token %}
-            <div>
-                <div>
-                    Schedule Time:
-                    <input 
-                    type="text"
-                    name="time"
-                    placeholder="e.g. 13:00 for 1:00 pm"
-                    />
-                </div><br>
-                <div>
-                    Schedule:
-                    <input 
-                    type="text"
-                    name="content"
-                    placeholder="Content"
-                    />
-                </div><br>
-                <div>
-                    <input class="create-schedule2-btn" type="submit" value="Add New Schedule" />
-                </div>
-            </div>  
+            {{form.as_p}}
+            <input class="btn" type="submit" value="Add New Schedule" />
         </form>
     </div>
 </div>

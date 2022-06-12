@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponseRedirect
 from django.views import View
 from django.views.generic.base import TemplateView
+
+from main_app.forms import ScheduleCreateForm
 from .models import Day, Schedule
 from django.views.generic.edit import UpdateView, DeleteView
 from django.urls import reverse
@@ -30,15 +32,26 @@ class DayCreate(View):
 
 @method_decorator(login_required, name='dispatch')
 class ScheduleCreate(View):
-    
+    # Creating the form
     def get(self, request, day_id, *args, **kwargs):
-        return render(request, "schedule_create2.html")
-    
+        # This comes from forms.py
+        form = ScheduleCreateForm()
+        # Give the form to the template
+        return render(request, "schedule_create2.html", context={'form':form})
+    # Post funstion runs when we submit the form
     def post(self, request, day_id):
-        time = request.POST.get("time")
-        content = request.POST.get("content")
-        Schedule.objects.create(time=time, content=content, day_id=day_id)
-        return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
+        # request.POST = form data that was submitted through this request
+        form = ScheduleCreateForm(request.POST)
+        if form.is_valid():
+            # Will create and save a new schedule object
+            #commit = False >> Don't save yet because we don't have all the information yet
+            schedule = form.save(commit=False)
+            schedule.user = request.user
+            schedule.day_id = day_id
+            schedule.save()
+            return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
+        return render(request, "schedule_create2.html", context={'form':form})
+    
 
 @method_decorator(login_required, name='dispatch')
 class ScheduleUpdate(UpdateView):
@@ -108,6 +121,7 @@ class MonthlySchedule(TemplateView):
         context["last_day"] = month_end
         context["days"] = Day.objects.filter(date__range=[month_start, month_end]) 
         return context
+    # def dateClick(self):  >> click a date and display relevant schedule? Is this possible?
     
     
 class Signup(View):

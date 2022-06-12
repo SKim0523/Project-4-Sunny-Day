@@ -1,25 +1,94 @@
 {% extends 'base.html' %}
+{% block title %}Monthly View{% endblock %}
 {% block content %}
 <h1 class="month-name">{{current_month}}<i class="fa-solid fa-cloud"></i></h1>
 <div class="upper-container">
     <div class="children-container">
         <img class="rainbow-boy" src="../static/image/rainbow-boy.jpg" alt="a boy drawing rainbow on window">
     </div>
-
-    <div class="btn-container">
-        <a href="{% url 'daily_schedule' %}"><button class="weekly-btn">Daily View</button></a>
-        <a href="{% url 'weekly_schedule' %}"><button class="weekly-btn">Weekly View</button></a>
-        <a href="{% url 'day_create' %}"><button class="add-day-btn">Add New Day</button></a>
+<div class="wrapper">
+    <div class="calender-container item">
+        <div class="calendar">
+            <div class="calendar2">
+                <h1 class="calendar-month">{{current_month}}</h1>
+                <ul class="calendar-days">
+                    <li>Sun</li>
+                    <li class="monday">Mon</li>
+                    <li>Tue</li>
+                    <li>Wed</li>
+                    <li>Thu</li>
+                    <li class="friday">Fri</li>
+                    <li>Sat</li>
+                </ul>
+                <ul class="calendar-date">
+                    <li class="clendar-list"></li>
+                    <li class="clendar-list"></li>
+                    <li class="clendar-list"></li>
+                    <li class="clendar-list">1</li>
+                    <li class="clendar-list">2</li>
+                    <li class="clendar-list">3</li>
+                    <li class="clendar-list">4</li>
+                    <li class="clendar-list">5</li>
+                    <li class="clendar-list">6</li>
+                    <li class="clendar-list">7</li>
+                    <li class="clendar-list">8</li>
+                    <li class="clendar-list">9</li>
+                    <li class="clendar-list">10</li>
+                    <li class="clendar-list">11</li>
+                    <li class="clendar-list">12</li>
+                    <li class="clendar-list">13</li>
+                    <li class="clendar-list">14</li>
+                    <li class="clendar-list">15</li>
+                    <li class="clendar-list">16</li>
+                    <li class="clendar-list">17</li>
+                    <li class="clendar-list">18</li>
+                    <li class="clendar-list">19</li>
+                    <li class="clendar-list">20</li>
+                    <li class="clendar-list">21</li>
+                    <li class="clendar-list">22</li>
+                    <li class="clendar-list">23</li>
+                    <li class="clendar-list">24</li>
+                    <li class="clendar-list">25</li>
+                    <li class="clendar-list">26</li>
+                    <li class="clendar-list">27</li>
+                    <li class="clendar-list">28</li>
+                    <li class="clendar-list">29</li>
+                    <li class="clendar-list">30</li>
+                    <li class="clendar-list"></li>
+                    <li class="clendar-list"></li>
+                </ul>
+            </div>
+        </div>
     </div>
-    
-    {% for day in days %}
-    <div class="card">
+
+    <div class="card item">
         <div class="card-header">
-            <span>{{ day.date|date:" l " }}</span><span class="week-date">{{day.date}}</span>
+            <span class="day">Day</span> <span class="date">Date</span>
         </div>
         <div class="card-body">
             <span class="instruction">* Click contents to edit.</span><br>
-            <a class ="links" href="{% url 'schedule_create2' day.id %}"><i class="fa-solid fa-calendar-plus"></i></a>
+            <a class ="links" href=""><i class="fa-solid fa-calendar-plus"></i></a><span class="category">Schedule</span>
+            <ul>
+                <li><a class ="links" href="">Time</a> | <a class ="links" href="">Schedule content</a>
+                <a href=""><i class="fa-solid fa-delete-left"></i></a>      
+            </ul>
+            <a class ="links" href=""><i class="fa-solid fa-heart-circle-plus"></i></a><span class="category">Memo</span><br>
+            <span class="memo"><a class ="links" href="">Memo content</a>
+            </span>              
+        </div>
+    </div>
+</div>
+
+    <div class="btn-container">
+        <a href="{% url 'daily_schedule' %}"><button class="btn">Daily View</button></a>
+        <a href="{% url 'weekly_schedule' %}"><button class="btn">Weekly View</button></a>
+        <a href="{% url 'day_create' %}"><button class="btn">Add New Day</button></a>
+    </div>
+
+    {% for day in days %}
+    
+            <span>{{ day.date|date:" l " }}</span><span class="week-date">{{day.date}}</span>
+            <a class ="links" href="{% url 'schedule_create2' day.id %}"><br><i class="fa-solid fa-calendar-plus"></i></a>
             <span class="category">Schedule</span>
             <ul>
                 {% for schedule in day.schedules.all %}
@@ -31,12 +100,9 @@
             <a class ="links" href="/memo/{{day.id}}/update"><i class="fa-solid fa-heart-circle-plus"></i></a>
             <span class="category">Memo</span><br>
             <span class="memo"><a class ="links" href="/memo/{{day.id}}/update">{{day.memo}}</a>
-                <a href="/memo/{{day.id}}/delete"><i class="fa-solid fa-delete-left"></i></a>
+                <a href="/memo/{{day.id}}/delete"><i class="fa-solid fa-delete-left"></i></a><br><br>
             </span>              
-        </div>
-    </div>
+        
     {% endfor %}
-
 </div>
-<!-- Need to display Calendar -->
 {% endblock %}
