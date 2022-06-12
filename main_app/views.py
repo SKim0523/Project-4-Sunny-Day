@@ -37,7 +37,7 @@ class ScheduleCreate(View):
         # This comes from forms.py
         form = ScheduleCreateForm()
         # Give the form to the template
-        return render(request, "schedule_create2.html", context={'form':form})
+        return render(request, "schedule_create.html", context={'form':form})
     # Post funstion runs when we submit the form
     def post(self, request, day_id):
         # request.POST = form data that was submitted through this request

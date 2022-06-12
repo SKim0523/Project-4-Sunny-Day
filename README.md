@@ -1,5 +1,6 @@
 # Project-4-Sunny-Day
 Fullstack app project with Django-PostgreSQL backend
+https://sunny-today.herokuapp.com/accounts/login/
 
 ## Project Description
 “Sunny Day” app provides parents of small kids a simple and quick reminder tool to jot down their kids’ daily and weekly schedule/events as well as relevant memos. Users can create, edit, and delete their memos/schedules and toggle between today’s view and week’s view.
