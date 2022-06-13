@@ -26,26 +26,12 @@ body, .login-page-body {
 .navbar {
     background: url("../image/sky.png");
     background-size: cover;
-    /* background-repeat: no-repeat; */
 }
 
 .nav-text {
     font-family: 'Gamja Flower', cursive;
     font-size: 2rem;
 }
-
-/* .sun {
-    animation-name: floating;
-    animation-duration: 3s;
-    animation-iteration-count: infinite;
-    animation-timing-function: ease-in-out;
-}
- 
-@keyframes sun {
-    0% { transform: translate(0,  0px); }
-    50%  { transform: translate(0, 15px); }
-    100%   { transform: translate(0, -0px); }   
-} */
 
 /****** Schedule Card *******/
 
@@ -99,7 +85,6 @@ body, .login-page-body {
 
 .memo {
     padding-left: 1.5rem;
-    /* margin-bottom: 0.5rem; */
 }
 
 .links {
@@ -132,19 +117,11 @@ body, .login-page-body {
 	text-shadow:0px 1px 0px #ffee66;
     margin-bottom: 0.5rem;
 }
-/* .add-day-btn:hover, .day-view-btn:hover, .create-day-btn:hover, .weekly-btn:hover, .create-schedule2-btn:hover, .login-btn:hover, .signup-btn:hover, .monthly-btn:hover, .edit-memo-btn:hover, .delete-btn:hover, .cancel-btn:hover {
-	background:linear-gradient(to bottom, #ffab23 5%, #ffec64 100%);
-	background-color:#ffab23;
-} */
 
 .btn:hover {
 	background:linear-gradient(to bottom, #ffab23 5%, #ffec64 100%);
 	background-color:#ffab23;
 }
-/* .add-day-btn:active, .day-view-btn:active, .create-day-btn:active, .weekly-btn:active, .create-schedule2-btn:active, .login-btn:active, .signup-btn:active, .monthly-btn:active, .edit-memo-btn:active, .delete-btn:active, .cancel-btn:active {
-	position:relative;
-	top:1px;
-} */
 
 .btn:active {
 	position:relative;
@@ -191,7 +168,6 @@ body, .login-page-body {
     box-shadow: 5px 5px 5px lightgrey;
     margin-top: 20px;
 }
-
 
 .rainbow-boy{
     width: 100%;
@@ -240,7 +216,6 @@ body, .login-page-body {
     font-size: 1.3rem;
 }
 
-
 /******* Weekly View ******/
 .week-of {
     font-family: 'Gamja Flower', cursive;
@@ -252,7 +227,6 @@ body, .login-page-body {
 .week-range, .week-date {
     font-size: 1.5rem;
 }
-
 
 /******* Footer *******/
 
@@ -277,90 +251,11 @@ footer {
     font-family: 'Gamja Flower', cursive;
 }
 
-/********* Calendar 1 ***********/
-/* .calender-container {
-   margin-top: 1rem;
+.login-footer {
+    margin-top: 5rem;
 }
 
-.calendar {
-    display: flex;
-    width: 100%;
-    margin-right: 1rem;
-    align-items: center;
-    flex-wrap: wrap;
-
-}
-
-.calendar2 {
-    box-shadow: 5px 5px 5px #e5e5e5;
-    background-color: white;
-    border-radius: 2%;
-    padding: 0.5rem;
-}
-
-.calendar2 h1 {
-    text-align: center;
-    padding: 1rem
-}
-
-.calendar2 ul {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    list-style: none;
-}
-
-.clendar-list {
-    padding: 5px;
-    text-align: center;
-    font-size: 1.3rem;
-}
-
-.calendar-date {
-    margin-right: 1.5rem;
-}
-
-.calendar-days{
-   
-    font-family: 'Gamja Flower', cursive;
-    font-size: 1.5rem;
-    text-align: center;
-    margin-right: 1.5rem;
-}
-
-.wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    align-content: flex-start; 
-}
-
-.item2 {
-    flex-grow: 2;
-}
-
-.monday {
-    margin-right: 0.6rem;
-}
-
-.friday {
-    margin-left: 0.3rem;
-}
-
-.calendar-month {
-    font-size: 2rem;
-    font-family: 'Gamja Flower', cursive;
-}
-
-.rainbow-hearts {
-    margin-top: 0.5rem;
-    width: 15%;
-}
-
-.spacer {
-    color:white;
-} */
-
-
-/******* Calendar 2 **********/
+/********* Calendar ***********/
 
 .main {
     margin: 0;
@@ -397,12 +292,24 @@ footer {
 
 .spacer {
     color:white;
-} */
-
-
+}
 
 
 /******* Delete Page *********/
 .delete-confirmation{
-    font-size: 1.3rem;
+    font-size: 1.2rem;
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.buttons {
+    margin-bottom: 5rem;
+}
+
+.delete-buttons {
+    margin-bottom: 0.7rem;
+}
+
+.image-container {
+    margin-bottom: 1.5rem;
 }

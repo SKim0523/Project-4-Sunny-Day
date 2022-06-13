@@ -8,58 +8,11 @@
 <main>
     <h1 class="calendar-month">{{current_month}}<i class="fa-solid fa-cloud"></i></h1>
     <div class="calendar">
-        <div class = "number is-Wednesday">1</div>
-        <div class = "number">2</div>
-        <div class = "number">3</div>
-        <div class = "number">4</div>
-        <div class = "number">5</div>
-        <div class = "number">6</div>
-        <div class = "number">7</div>
-        <div class = "number">8</div>
-        <div class = "number">9</div>
-        <div class = "number">10</div>
-        <div class = "number">11</div>
-        <div class = "number">12</div>
-        <div class = "number">13</div>
-        <div class = "number">14</div>
-        <div class = "number">15</div>
-        <div class = "number">16</div>
-        <div class = "number">17</div>
-        <div class = "number">18</div>
-        <div class = "number">19</div>
-        <div class = "number">20</div>
-        <div class = "number">21</div>
-        <div class = "number">22</div>
-        <div class = "number">23</div>
-        <div class = "number">24</div>
-        <div class = "number">25</div>
-        <div class = "number">26</div>
-        <div class = "number">27</div>
-        <div class = "number">28</div>
-        <div class = "number">29</div>
-        <div class = "number">30</div>           
-        
+        {% for day in range %}
+        <a class="number {% if forloop.first %} is-Wednesday {% endif %}" href="#day_{{day}}">{{day}}</a>
+        {% endfor %}
     </div>
 </main>
-
-
-<div class="card item2">
-    <div class="card-header">
-        <span class="day">Day</span> <span class="date">Date</span>
-    </div>
-    <div class="card-body">
-        <span class="instruction">* Click contents to edit.</span><br>
-        <a class ="links" href=""><i class="fa-solid fa-calendar-plus"></i></a><span class="category">Schedule</span>
-        <ul>
-            <li><a class ="links" href="">Time</a> | <a class ="links" href="">Schedule content</a>
-            <a href=""><i class="fa-solid fa-delete-left"></i></a>      
-        </ul>
-        <a class ="links" href=""><i class="fa-solid fa-heart-circle-plus"></i></a><span class="category">Memo</span><br>
-        <span class="memo"><a class ="links" href="">Memo content</a>
-        </span>              
-    </div>
-</div>
-
 
     <div class="btn-container">
         <a href="{% url 'daily_schedule' %}"><button class="btn">Daily View</button></a>
@@ -67,24 +20,23 @@
         <a href="{% url 'day_create' %}"><button class="btn">Add New Day</button></a>
     </div>
 
-    {% for day in days %}
-    
-            <span>{{ day.date|date:" l " }}</span><span class="week-date">{{day.date}}</span>
-            <a class ="links" href="{% url 'schedule_create' day.id %}"><br><i class="fa-solid fa-calendar-plus"></i></a>
-            <span class="category">Schedule</span>
-            <ul>
-                {% for schedule in day.schedules.all %}
-                <li><a class ="links" href="/schedule/{{schedule.id}}/update">{{schedule.time}}</a> | <a class ="links" href="/schedule/{{schedule.id}}/update">{{schedule.content}}</a>
-                    <a href="/schedule/{{schedule.id}}/delete"><i class="fa-solid fa-delete-left"></i></a>
-                </li>
-                {% endfor %}
-            </ul>
-            <a class ="links" href="/memo/{{day.id}}/update"><i class="fa-solid fa-heart-circle-plus"></i></a>
-            <span class="category">Memo</span><br>
-            <span class="memo"><a class ="links" href="/memo/{{day.id}}/update">{{day.memo}}</a>
-                <a href="/memo/{{day.id}}/delete"><i class="fa-solid fa-delete-left"></i></a><br><br>
-            </span>              
-        
-    {% endfor %}
+{% for day in days %}
+    <a name="day_{{day.date|date:"j"}}"><span>{{day.date|date:"l"}}</span><span class="week-date">{{day.date}}</span></a>
+    <a class ="links" href="{% url 'schedule_create' day.id %}"><br><i class="fa-solid fa-calendar-plus"></i></a>
+    <span class="category">Schedule</span>
+    <ul>
+        {% for schedule in day.schedules.all %}
+        <li><a class ="links" href="/schedule/{{schedule.id}}/update">{{schedule.time}}</a> | <a class ="links" href="/schedule/{{schedule.id}}/update">{{schedule.content}}</a>
+            <a href="/schedule/{{schedule.id}}/delete"><i class="fa-solid fa-delete-left"></i></a>
+        </li>
+        {% endfor %}
+    </ul>
+    <a class ="links" href="/memo/{{day.id}}/update"><i class="fa-solid fa-heart-circle-plus"></i></a>
+    <span class="category">Memo</span><br>
+    <span class="memo"><a class ="links" href="/memo/{{day.id}}/update">{{day.memo}}</a>
+        <a href="/memo/{{day.id}}/delete"><i class="fa-solid fa-delete-left"></i></a><br><br>
+    </span>              
+{% endfor %}
+
 </div>
 {% endblock %}
