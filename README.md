@@ -1,7 +1,7 @@
 # Project-4-Sunny-Day
 Fullstack app project with Django-PostgreSQL backend
 
-## Project Description
+## Project Description:
 “Sunny Day” app provides parents of small kids a simple reminder tool to record their kids’ daily and weekly schedule as well as any relevant memos for a given day. Users can create, edit, and delete their memos/schedules and toggle between daily view and weekly view.
 https://sunny-today.herokuapp.com/accounts/login/
 
@@ -9,6 +9,9 @@ https://sunny-today.herokuapp.com/accounts/login/
 ![Screen Shot 2022-06-13 at 1 19 59 AM](https://user-images.githubusercontent.com/79298250/173284978-00c90e48-000f-4033-ae39-6eaedbb8d69f.png)
 ![Screen Shot 2022-06-13 at 1 20 18 AM](https://user-images.githubusercontent.com/79298250/173284986-9cc799df-034b-48f9-85de-726fcee41968.png)
 ![Screen Shot 2022-06-13 at 1 20 32 AM](https://user-images.githubusercontent.com/79298250/173284993-f80c6b69-2c29-4e84-9cf4-d62f5135e879.png)
+
+## Entity Relationship Diagram:
+![Screen Shot 2022-06-13 at 8 34 54 AM](https://user-images.githubusercontent.com/79298250/173355182-6249895f-8ff9-4d48-931e-e6fb5f700147.png)
 
 ## MVP User Stories:
 - As a user, I want to create my own account, using a username and a password (log-on/log-off funtionalities).
@@ -28,7 +31,7 @@ https://sunny-today.herokuapp.com/accounts/login/
 -	GitHub
 -	Google Chrome
 
-## Getting Started/Installation Instructions:
+## Getting Started/Installation:
 1. Fork and clone the following repository: https://github.com/SKim0523/Project-4-Sunny-Day.git
 2. Install Django, Python3, Python Package Index (pip) and PostgreSQL
 3. Inside the editor terminal, run "python3 manage.py runserver"
