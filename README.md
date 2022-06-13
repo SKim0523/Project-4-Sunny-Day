@@ -6,20 +6,9 @@ Fullstack app project with Django-PostgreSQL backend
 https://sunny-today.herokuapp.com/accounts/login/
 
 ## App Screenshots:
-### Log In page
-![Screen Shot 2022-06-12 at 5 30 50 PM](https://user-images.githubusercontent.com/79298250/173254471-92354f22-1050-4ee9-affa-27d737ea1b72.png)
-### Sign Up page
-![Screen Shot 2022-06-12 at 5 31 49 PM](https://user-images.githubusercontent.com/79298250/173254503-9bf3d4bc-7889-4992-9b24-6393c1556da4.png)
-### Daily View page
-![Screen Shot 2022-06-12 at 5 35 35 PM](https://user-images.githubusercontent.com/79298250/173254657-67b24055-16b1-49fc-b713-1b38961a3b64.png)
-### Weekly View page
-![Screen Shot 2022-06-12 at 5 36 27 PM](https://user-images.githubusercontent.com/79298250/173254692-23c9cf40-11a2-4645-8be5-67b31e0514f5.png)
-### Add Schdule page
-![Screen Shot 2022-06-12 at 5 37 14 PM](https://user-images.githubusercontent.com/79298250/173254744-bb46c2b4-d2e4-4de9-ab2d-787400bb6b1b.png)
-### Edit Memo page
-![Screen Shot 2022-06-12 at 5 38 38 PM](https://user-images.githubusercontent.com/79298250/173254771-60df0294-3896-4bad-8363-bd2ce290407d.png)
-### Add a New Day page
-![Screen Shot 2022-06-12 at 5 39 21 PM](https://user-images.githubusercontent.com/79298250/173254791-406c000a-c57f-4128-881f-a2868c486e30.png)
+![Screen Shot 2022-06-13 at 1 19 59 AM](https://user-images.githubusercontent.com/79298250/173284978-00c90e48-000f-4033-ae39-6eaedbb8d69f.png)
+![Screen Shot 2022-06-13 at 1 20 18 AM](https://user-images.githubusercontent.com/79298250/173284986-9cc799df-034b-48f9-85de-726fcee41968.png)
+![Screen Shot 2022-06-13 at 1 20 32 AM](https://user-images.githubusercontent.com/79298250/173284993-f80c6b69-2c29-4e84-9cf4-d62f5135e879.png)
 
 ## MVP User Stories:
 - As a user, I want to create my own account, using a username and a password (log-on/log-off funtionalities).
@@ -40,12 +29,14 @@ https://sunny-today.herokuapp.com/accounts/login/
 -	Google Chrome
 
 ## Getting Started/Installation Instructions:
-TBD
+1. Fork and clone the following repository: https://github.com/SKim0523/Project-4-Sunny-Day.git
+2. Install Django, Python3, Python Package Index (pip) and PostgreSQL
+3. Inside the editor terminal, run "python3 manage.py runserver"
+4. Open http://127.0.0.1:8000/accounts/login/ in Google Chrome
 
-## Next Steps -- Post MVP Stretch Goals:
-I would like to let the user have an option to: 
-(1) View schedules in a monthly and yearly view
-(2) Access a specific day's schedule and memo by clicking the calendar
+## Next Steps:
+- I would like to let the user have an option to: (1) View schedules in a monthly and yearly view and (2) Access a specific day's schedule and memo by clicking the calendar
+- I would also like to modify codes to let different users access schedules/memos created by themselves
 
 ## Contribution Guidelines:
 Please feel free to contribute to my code, identify bugs, and propose improvements!
